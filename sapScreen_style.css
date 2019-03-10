@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+/*object*/
+body{
+  margin: 0; padding: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%
+}
+
+div{
+  margin: 0; padding: 0;
+}
+
+h4{
+  margin: 0; padding: 0;
+}
+
+
+#builder{
+  position: absolute;
+  height: 100%;
+  width: 100%
+}
+
+/* header */
+.projectname{
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#topmenu{
+  position: fixed;
+  z-index: 1;
+  background-color: #F5D0A9;
+  height: 60px;
+  width: 100%;
+}
+
+.menu{
+  position: relative;
+  height: 20px;
+  padding: 0 10px;
+}
+
+.menubutton{
+  display: inline;
+  font-size: 10px;
+  padding: 0 10px;
+}
+
+/* layout */
+/* 1-1 listseq */
+#listseq{
+  position: absolute;
+  height: 700px;
+  width: 200px;
+  top: 60px;
+}
+
+#projectController{
+  height: 500px;
+  width: 200px;
+}
+
+#sprintList{
+  height: 200px;
+  width: 200px;
+}
+
+#editor{
+  position: absolute;
+  left: 200px;
+  right: 250px;
+  top: 60px;
+}
+
+#option{
+  position: absolute;
+  height: 700px;
+  width: 250px;
+  left: auto;
+  right: 0;
+  top: 60px;
+}
+
+/* editor */
+.canvers{
+  height: 700px;
+  width: 1200px;
+}

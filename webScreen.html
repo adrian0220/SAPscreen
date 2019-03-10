@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> SAP Screen </title>
+  <script type="text/javascript" >
+    function getProgramName() {
+      <%
+      var program_text = request.getParameter("programName");
+      %>
+      document.getElementById("name").write(program_text);
+    };
+  </script>
+</head>
+<body>
+  <br> URL : <div id="name" onload="getProgramName()"></div>
+</body>
+</html>
