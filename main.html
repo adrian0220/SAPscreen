@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Main Page</title>
+  <script type="text/javascript" >
+    function select_system() {
+      var name = document.getElementById('system');
+      var selectValue = name.options[name.selectedIndex].value;
+
+      if(selectValue == 'Webpage') document.getElementById('input_program').innerHTML = "URL : ";
+      else if(selectValue == 'sap') document.getElementById('input_program').innerHTML = "T-code : ";
+      else if(selectValue == 'android') document.getElementById('input_program').innerHTML = "Android Project : ";
+      if(selectValue == 'apple') document.getElementById('input_program').innerHTML = "IOS Project : ";
+
+      document.getElementById('program_name').style.display = "inline";
+    };
+
+    function getProgram(){
+      var name = document.getElementById('system');
+      var selectValue = name.options[name.selectedIndex].value;
+      var temp = document.getElementById('program_name').value;
+
+      var f = document.createElement("Form");
+      f.setAttribute("method","post");
+
+      if(selectValue == 'Webpage'){
+          f.setAttribute("action","webScreen.html");
+      }
+      else if (selectValue == 'sap') {
+          f.setAttribute("action","sapScreen.html");
+      }
+
+      document.body.appendChild(f);
+
+      var i = document.createElement("input");
+      i.setAttribute("type","hidden");
+      i.setAttribute("name","programName");
+      i.setAttribute("value",temp);
+      f.appendChild(i);
+
+      f.submit();
+
+    };
+
+  </script>
+</head>
+
+<body>
+  <h1>프로그램 선택</h1>
+  <h4>System</h4>
+  <select id="system" name="System" onchange="select_system()">
+    <option value='' selected>-- 선택 --</option>
+    <option value='Webpage'>웹 페이지</option>
+    <option value='sap'>SAP 프로그램</option>
+    <option value='android'>모바일 프로그램(안드로이드)</option>
+    <option value='apple'>모바일 프로그램(IOS)</option>
+  </select>
+  <br></br>
+  <span>
+    <div id="input_program"></div>
+    <input id="program_name" type="text" style="display:none" ></input>
+  </span>
+  <br></br>
+  <input type="button" value="view" onclick="getProgram()"></input>
+</body>
+</html>
